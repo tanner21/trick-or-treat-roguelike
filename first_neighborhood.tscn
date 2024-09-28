@@ -1,0 +1,249 @@
+[gd_scene load_steps=11 format=3 uid="uid://3h0813qf2kmu"]
+
+[ext_resource type="Texture2D" uid="uid://dxeexcnlyh61e" path="res://art/first neighborhood.png" id="1_3jo7i"]
+[ext_resource type="Script" path="res://first_neighborhood.gd" id="1_a2hsd"]
+[ext_resource type="Texture2D" uid="uid://dtb6ionkxyo7x" path="res://art/house.png" id="2_q5rto"]
+[ext_resource type="Texture2D" uid="uid://b2dof6k2hrvkh" path="res://art/locked house.png" id="3_pc5uq"]
+[ext_resource type="Texture2D" uid="uid://pqp5nejxcgbm" path="res://art/friend's house.png" id="4_fu8ko"]
+[ext_resource type="Texture2D" uid="uid://en7vaj155urt" path="res://art/locked friend's house.png" id="5_fld1o"]
+[ext_resource type="Texture2D" uid="uid://bq4phhbysaxhg" path="res://art/rich house.png" id="5_he6bn"]
+[ext_resource type="Texture2D" uid="uid://choph66vdo2dt" path="res://art/locked rich house.png" id="6_gxhrm"]
+[ext_resource type="Texture2D" uid="uid://bg7s3tkojs6js" path="res://art/boss house.png" id="7_od52q"]
+[ext_resource type="Texture2D" uid="uid://c4wc65mvejwxk" path="res://art/locked boss house.png" id="8_xve4k"]
+
+[node name="First Neighborhood" type="Node2D"]
+script = ExtResource("1_a2hsd")
+
+[node name="Map" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3jo7i")
+metadata/_edit_lock_ = true
+
+[node name="Home" type="TextureButton" parent="."]
+offset_left = 552.0
+offset_top = 512.0
+offset_right = 616.0
+offset_bottom = 576.0
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 1" type="TextureButton" parent="."]
+offset_left = 736.0
+offset_top = 549.0
+offset_right = 800.0
+offset_bottom = 613.0
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 2" type="TextureButton" parent="."]
+offset_left = 778.0
+offset_top = 395.0
+offset_right = 842.0
+offset_bottom = 459.0
+disabled = true
+texture_normal = ExtResource("4_fu8ko")
+texture_disabled = ExtResource("5_fld1o")
+
+[node name="House 3" type="TextureButton" parent="."]
+offset_left = 978.0
+offset_top = 494.0
+offset_right = 1042.0
+offset_bottom = 558.0
+disabled = true
+texture_normal = ExtResource("5_he6bn")
+texture_disabled = ExtResource("6_gxhrm")
+
+[node name="House 4" type="TextureButton" parent="."]
+offset_left = 868.0
+offset_top = 303.0
+offset_right = 932.0
+offset_bottom = 367.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 5" type="TextureButton" parent="."]
+offset_left = 1055.0
+offset_top = 280.0
+offset_right = 1119.0
+offset_bottom = 344.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 6" type="TextureButton" parent="."]
+offset_left = 838.0
+offset_top = 195.0
+offset_right = 902.0
+offset_bottom = 259.0
+disabled = true
+texture_normal = ExtResource("5_he6bn")
+texture_disabled = ExtResource("6_gxhrm")
+
+[node name="House 7" type="TextureButton" parent="."]
+offset_left = 1006.0
+offset_top = 86.0
+offset_right = 1070.0
+offset_bottom = 150.0
+disabled = true
+texture_normal = ExtResource("4_fu8ko")
+texture_disabled = ExtResource("5_fld1o")
+
+[node name="House 8" type="TextureButton" parent="."]
+offset_left = 836.0
+offset_top = 10.0
+offset_right = 900.0
+offset_bottom = 74.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 9" type="TextureButton" parent="."]
+offset_left = 686.0
+offset_top = 28.0
+offset_right = 750.0
+offset_bottom = 92.0
+disabled = true
+texture_normal = ExtResource("4_fu8ko")
+texture_disabled = ExtResource("5_fld1o")
+
+[node name="House 10" type="TextureButton" parent="."]
+offset_left = 531.0
+offset_top = 98.0
+offset_right = 595.0
+offset_bottom = 162.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 11" type="TextureButton" parent="."]
+offset_left = 720.0
+offset_top = 207.0
+offset_right = 784.0
+offset_bottom = 271.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 12" type="TextureButton" parent="."]
+offset_left = 720.0
+offset_top = 320.0
+offset_right = 784.0
+offset_bottom = 384.0
+disabled = true
+texture_normal = ExtResource("5_he6bn")
+texture_disabled = ExtResource("6_gxhrm")
+
+[node name="House 13" type="TextureButton" parent="."]
+offset_left = 442.0
+offset_top = 242.0
+offset_right = 506.0
+offset_bottom = 306.0
+disabled = true
+texture_normal = ExtResource("4_fu8ko")
+texture_disabled = ExtResource("5_fld1o")
+
+[node name="House 14" type="TextureButton" parent="."]
+offset_left = 359.0
+offset_top = 304.0
+offset_right = 423.0
+offset_bottom = 368.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 15" type="TextureButton" parent="."]
+offset_left = 305.0
+offset_top = 510.0
+offset_right = 369.0
+offset_bottom = 574.0
+disabled = true
+texture_normal = ExtResource("4_fu8ko")
+texture_disabled = ExtResource("5_fld1o")
+
+[node name="House 16" type="TextureButton" parent="."]
+offset_left = 245.0
+offset_top = 326.0
+offset_right = 309.0
+offset_bottom = 390.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 17" type="TextureButton" parent="."]
+offset_left = 103.0
+offset_top = 465.0
+offset_right = 167.0
+offset_bottom = 529.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 18" type="TextureButton" parent="."]
+offset_left = 152.0
+offset_top = 272.0
+offset_right = 216.0
+offset_bottom = 336.0
+disabled = true
+texture_normal = ExtResource("5_he6bn")
+texture_disabled = ExtResource("6_gxhrm")
+
+[node name="House 19" type="TextureButton" parent="."]
+offset_left = 15.0
+offset_top = 244.0
+offset_right = 79.0
+offset_bottom = 308.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 20" type="TextureButton" parent="."]
+offset_left = 78.0
+offset_top = 6.0
+offset_right = 142.0
+offset_bottom = 70.0
+disabled = true
+texture_normal = ExtResource("2_q5rto")
+texture_disabled = ExtResource("3_pc5uq")
+
+[node name="House 21" type="TextureButton" parent="."]
+offset_left = 331.0
+offset_top = 9.0
+offset_right = 395.0
+offset_bottom = 73.0
+disabled = true
+texture_normal = ExtResource("4_fu8ko")
+texture_disabled = ExtResource("5_fld1o")
+
+[node name="Boss House" type="TextureButton" parent="."]
+offset_left = 314.0
+offset_top = 196.0
+offset_right = 378.0
+offset_bottom = 260.0
+disabled = true
+texture_normal = ExtResource("7_od52q")
+texture_disabled = ExtResource("8_xve4k")
+
+[connection signal="pressed" from="House 1" to="." method="_on_house_1_pressed"]
+[connection signal="pressed" from="House 2" to="." method="_on_house_2_pressed"]
+[connection signal="pressed" from="House 3" to="." method="_on_house_3_pressed"]
+[connection signal="pressed" from="House 4" to="." method="_on_house_4_pressed"]
+[connection signal="pressed" from="House 5" to="." method="_on_house_5_pressed"]
+[connection signal="pressed" from="House 6" to="." method="_on_house_6_pressed"]
+[connection signal="pressed" from="House 7" to="." method="_on_house_7_pressed"]
+[connection signal="pressed" from="House 8" to="." method="_on_house_8_pressed"]
+[connection signal="pressed" from="House 9" to="." method="_on_house_9_pressed"]
+[connection signal="pressed" from="House 10" to="." method="_on_house_10_pressed"]
+[connection signal="pressed" from="House 11" to="." method="_on_house_11_pressed"]
+[connection signal="pressed" from="House 12" to="." method="_on_house_12_pressed"]
+[connection signal="pressed" from="House 13" to="." method="_on_house_13_pressed"]
+[connection signal="pressed" from="House 14" to="." method="_on_house_14_pressed"]
+[connection signal="pressed" from="House 15" to="." method="_on_house_15_pressed"]
+[connection signal="pressed" from="House 16" to="." method="_on_house_16_pressed"]
+[connection signal="pressed" from="House 17" to="." method="_on_house_17_pressed"]
+[connection signal="pressed" from="House 18" to="." method="_on_house_18_pressed"]
+[connection signal="pressed" from="House 19" to="." method="_on_house_19_pressed"]
+[connection signal="pressed" from="House 20" to="." method="_on_house_20_pressed"]
+[connection signal="pressed" from="House 21" to="." method="_on_house_21_pressed"]
+[connection signal="pressed" from="Boss House" to="." method="_on_boss_house_pressed"]

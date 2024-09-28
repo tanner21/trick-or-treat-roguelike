@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwse3p47iejxf"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_jh07u"]
+[ext_resource type="PackedScene" uid="uid://sor8vi6v7mmo" path="res://start.tscn" id="2_dr4qm"]
+[ext_resource type="PackedScene" uid="uid://3h0813qf2kmu" path="res://first_neighborhood.tscn" id="3_vvfwp"]
+[ext_resource type="PackedScene" uid="uid://mckyglko4hwu" path="res://finish.tscn" id="4_nict8"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jh07u")
+
+[node name="CharacterName" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 17.0
+offset_right = 220.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 40
+
+[node name="Start" parent="." instance=ExtResource("2_dr4qm")]
+
+[node name="First Neighborhood" parent="." instance=ExtResource("3_vvfwp")]
+visible = false
+
+[node name="Finish" parent="." instance=ExtResource("4_nict8")]
+
+[connection signal="character_select" from="Start" to="." method="_on_start_character_select"]
+[connection signal="finish" from="First Neighborhood" to="." method="_on_first_neighborhood_finish"]
+[connection signal="start_over" from="Finish" to="." method="_on_finish_start_over"]

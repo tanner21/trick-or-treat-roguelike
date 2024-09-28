@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://mckyglko4hwu"]
+
+[ext_resource type="Script" path="res://finish.gd" id="1_hejwh"]
+[ext_resource type="Texture2D" uid="uid://dq1rxnov7cusx" path="res://art/warrior.png" id="2_j7xj8"]
+[ext_resource type="Texture2D" uid="uid://bgsbt4iroiw66" path="res://art/witch.png" id="3_866bo"]
+[ext_resource type="Texture2D" uid="uid://c6ooqne8iot4g" path="res://art/wizard.png" id="4_m7dpi"]
+
+[node name="Finish" type="Node2D"]
+visible = false
+script = ExtResource("1_hejwh")
+
+[node name="Warrior" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(574, 429)
+texture = ExtResource("2_j7xj8")
+
+[node name="Witch" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(574, 429)
+texture = ExtResource("3_866bo")
+
+[node name="Wizard" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(574, 429)
+texture = ExtResource("4_m7dpi")
+
+[node name="Status" type="Label" parent="."]
+offset_right = 1153.0
+offset_bottom = 338.0
+theme_override_font_sizes/font_size = 200
+text = "You won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartOver" type="Button" parent="."]
+offset_left = 503.0
+offset_top = 513.0
+offset_right = 658.0
+offset_bottom = 544.0
+text = "Trick or treat again"
+
+[connection signal="pressed" from="StartOver" to="." method="_on_start_over_pressed"]

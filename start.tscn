@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://sor8vi6v7mmo"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_xh2gb"]
+[ext_resource type="Texture2D" uid="uid://dq1rxnov7cusx" path="res://art/warrior.png" id="2_sjtyg"]
+[ext_resource type="Texture2D" uid="uid://c6ooqne8iot4g" path="res://art/wizard.png" id="3_ckthu"]
+[ext_resource type="Texture2D" uid="uid://bgsbt4iroiw66" path="res://art/witch.png" id="4_siix8"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_xh2gb")
+
+[node name="TitleAndButtonContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_top = 120.0
+offset_right = 1152.0
+offset_bottom = 364.0
+
+[node name="TitleContainer" type="HBoxContainer" parent="TitleAndButtonContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="TitleAndButtonContainer/TitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "Trick or Treat"
+
+[node name="CharacterSelect" type="Node2D" parent="."]
+
+[node name="CharacterContainer" type="HBoxContainer" parent="CharacterSelect"]
+offset_left = -1.0
+offset_top = 247.0
+offset_right = 1152.0
+offset_bottom = 647.0
+alignment = 1
+
+[node name="Warrior" type="TextureButton" parent="CharacterSelect/CharacterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("2_sjtyg")
+
+[node name="Label" type="Label" parent="CharacterSelect/CharacterContainer/Warrior"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 140.0
+offset_right = 94.0
+offset_bottom = 163.0
+text = "Warrior
+"
+
+[node name="Wizard" type="TextureButton" parent="CharacterSelect/CharacterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("3_ckthu")
+
+[node name="Label2" type="Label" parent="CharacterSelect/CharacterContainer/Wizard"]
+layout_mode = 2
+offset_left = 33.0
+offset_top = 143.0
+offset_right = 93.0
+offset_bottom = 166.0
+text = "Wizard
+"
+
+[node name="Witch" type="TextureButton" parent="CharacterSelect/CharacterContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("4_siix8")
+
+[node name="Label3" type="Label" parent="CharacterSelect/CharacterContainer/Witch"]
+layout_mode = 2
+offset_left = 34.0
+offset_top = 144.0
+offset_right = 94.0
+offset_bottom = 167.0
+text = "Witch
+"
+
+[connection signal="pressed" from="CharacterSelect/CharacterContainer/Warrior" to="." method="_on_warrior_pressed"]
+[connection signal="pressed" from="CharacterSelect/CharacterContainer/Wizard" to="." method="_on_wizard_pressed"]
+[connection signal="pressed" from="CharacterSelect/CharacterContainer/Witch" to="." method="_on_witch_pressed"]
