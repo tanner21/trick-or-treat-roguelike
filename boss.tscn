@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dktoxmunlu514"]
+
+[ext_resource type="Script" path="res://boss.gd" id="1_2rffr"]
+
+[node name="Boss" type="Node2D"]
+script = ExtResource("1_2rffr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 576.0
+offset_top = 236.0
+offset_right = 617.0
+offset_bottom = 259.0
+text = "Boss"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 555.0
+offset_top = 279.0
+offset_right = 638.0
+offset_bottom = 310.0
+text = "Boss"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

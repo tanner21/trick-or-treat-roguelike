@@ -16,45 +16,45 @@ func _init(props):
 	name = Shared.get_candy_name(type) # this should update the node's name in the tree
 	candy_name = Shared.get_candy_name(type)
 
-func use(enemy: Enemy, player, all_enemies: Array[Enemy]):
+func use(target: Node, all_targets: Array[Node]):
 	# Eat the candy
 	var power = yum + Shared.get_multiplier_power(level)
 	match (level):
 		Level.FUN_SIZE, Level.REGULAR_SIZE:
-			enemy.eat(power)
+			target.eat(power)
 		Level.KING_SIZE:
-			enemy.eat(power)
-			var random_enemy = get_random_enemy(all_enemies, enemy)
+			target.eat(power)
+			var random_enemy = get_random_target(all_targets, target)
 			random_enemy.eat(power)
 		Level.PARTY_SIZE:
-			affect_all_enemies(all_enemies, power)
+			affect_all_enemies(all_targets, power)
 
 	# Apply candy special effect
 	match (type):
 		Candy.NOW_AND_LATER:
 			# Do damage again next turn
-			enemy.eat_again(power)
+			target.eat_again(power)
 		Candy.ROCK:
 			# Daze
-			enemy.daze()
+			target.daze()
 		Candy.GUMMY_BEARS:
-			player.protect()
+			target.protect()
 		Candy.NERDS_ROPE:
-			enemy.tie_up()
+			target.tie_up()
 		Candy.SWEDISH_FISH:
-			affect_all_enemies(all_enemies, power)
+			affect_all_enemies(all_targets, power)
 				
 
-func affect_all_enemies(all_enemies, power):
-	for enemy in all_enemies:
-		enemy.eat(power)
+func affect_all_enemies(all_targets: Array[Node], power: int):
+	for target in all_targets:
+		target.eat(power)
 		
-func get_random_enemy(all_enemies: Array[Enemy], enemy: Enemy) -> Enemy:
-	var valid_enemies = all_enemies.filter(func (maybe_enemy):
-		return maybe_enemy.id != enemy.id
+func get_random_target(all_targets: Array, target) -> Node2D:
+	var valid_targets = all_targets.filter(func (maybe_target):
+		return maybe_target.id != target.id
 	)
 	
-	return valid_enemies.pick_random()
+	return valid_targets.pick_random()
 
 func level_up():
 	match level:

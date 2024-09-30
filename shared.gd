@@ -1,5 +1,7 @@
 extends Node
 
+### Characters #################################################################
+
 enum Characters {
 	WARRIOR, WIZARD, WITCH
 }
@@ -13,6 +15,7 @@ func get_character_name(character: Characters):
 		Characters.WITCH:
 			return 'Witch'
 
+### Candy ######################################################################
 
 enum Candy {
 	# Unhealthy
@@ -28,11 +31,11 @@ enum Candy {
 	HEATH, # -3
 	FRUIT_GUMMIES, # -2
 	# Special
-	ROCK, # Damage and daze someone for a turn
-	NOW_AND_LATER, # Damage and attack again next turn
+	ROCK, # 5 Damage and daze someone for a turn
+	NOW_AND_LATER, # 4 Damage and attack again next turn
+	SWEDISH_FISH, # 3 Damage all enemies
 	GUMMY_BEARS, # Takes damage for you next turn
 	NERDS_ROPE, # Tie up someone for next turn
-	SWEDISH_FISH # Damage all enemies
 }
 
 var candy_names = {
@@ -54,22 +57,6 @@ var candy_names = {
 	Candy.GUMMY_BEARS: "GUMMY BEARS",
 	Candy.NERDS_ROPE: "NERDS ROPE",
 	Candy.SWEDISH_FISH: "SWEDISH FISH",
-	
-	#Candy.SNICKERS: "SNICKERS",
-	#Candy.M_AND_MS: "M&Ms",
-	#Candy.KITKAT: "KITKAT",
-	#Candy.MILKY_WAY: "MILKY WAY",
-	#Candy.HERSHEY_KISS: "HERSHEY KISS",
-	#Candy.SOUR_PATCH_KIDS: "SOUR PATCH KIDS",
-	#Candy.JOLLY_RANCHERS: "JOLLY RANCHERS",
-	#Candy.LOLLIPOPS: "LOLLIPOPS",
-	#Candy.RING_POPS: "RING POPS",
-	#Candy.LEMONHEADS: "LEMONHEADS",
-	#Candy.ATOMIC_FIREBALLS: "ATOMIC FIREBALLS",
-	#Candy.STARBURST: "STARBURST",
-	#Candy.SKITTLES: "SKITTLES",
-	#Candy.CANDY_CORN: "CANDY CORN",
-	#Candy.JELLY_BEANS: "JELLY BEANS",
 }
 
 func get_candy_name(candy: Candy):
@@ -80,10 +67,10 @@ enum CandyLevel {
 }
 
 var candy_level_multiplier = {
-	CandyLevel.FUN_SIZE: 1, 
+	CandyLevel.FUN_SIZE: 0, 
 	CandyLevel.REGULAR_SIZE: 2,
 	CandyLevel.KING_SIZE: 3, # Also hits random enemy
-	CandyLevel.PARTY_SIZE: 3 # Does damage to all enemies
+	CandyLevel.PARTY_SIZE: 3 # Also hits two extra random enemies
 }
 
 func get_multiplier_power(level: CandyLevel) -> int:
@@ -132,3 +119,10 @@ func get_random_candy():
 	var enum_size = Candy.size()
 	var random_index = int(randf() * enum_size)  # randf() gives a float in the range [0.0, 1.0)
 	return get_candy(random_index)
+
+### House ######################################################################
+
+enum HOUSE_TYPE {
+	NORMAL,
+	RICH
+}
