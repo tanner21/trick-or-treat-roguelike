@@ -18,16 +18,20 @@ func _init(props):
 
 func use(target: Node, all_targets: Array[Node]):
 	# Eat the candy
-	var power = yum + Shared.get_multiplier_power(level)
+	var power = yum * Shared.get_power_multiplier(level)
 	match (level):
 		Level.FUN_SIZE, Level.REGULAR_SIZE:
 			target.eat(power)
 		Level.KING_SIZE:
 			target.eat(power)
-			var random_enemy = get_random_target(all_targets, target)
+			var random_enemy = get_random_target(all_targets, [target])
 			random_enemy.eat(power)
 		Level.PARTY_SIZE:
-			affect_all_enemies(all_targets, power)
+			var random_enemy = get_random_target(all_targets, [target])
+			random_enemy.eat(power)
+			
+			var random_enemy_2 = get_random_target(all_targets, [target, random_enemy])
+			random_enemy_2.eat(power)
 
 	# Apply candy special effect
 	match (type):
@@ -49,9 +53,9 @@ func affect_all_enemies(all_targets: Array[Node], power: int):
 	for target in all_targets:
 		target.eat(power)
 		
-func get_random_target(all_targets: Array, target) -> Node2D:
+func get_random_target(all_targets: Array[Node], ignore_targets: Array[Node]) -> Node2D:
 	var valid_targets = all_targets.filter(func (maybe_target):
-		return maybe_target.id != target.id
+		return not maybe_target in ignore_targets
 	)
 	
 	return valid_targets.pick_random()

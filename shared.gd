@@ -33,7 +33,7 @@ enum Candy {
 	# Special
 	ROCK, # 5 Damage and daze someone for a turn
 	NOW_AND_LATER, # 4 Damage and attack again next turn
-	SWEDISH_FISH, # 3 Damage all enemies
+	SWEDISH_FISH, # 3 Damage to two enemies
 	GUMMY_BEARS, # Takes damage for you next turn
 	NERDS_ROPE, # Tie up someone for next turn
 }
@@ -73,7 +73,7 @@ var candy_level_multiplier = {
 	CandyLevel.PARTY_SIZE: 3 # Also hits two extra random enemies
 }
 
-func get_multiplier_power(level: CandyLevel) -> int:
+func get_power_multiplier(level: CandyLevel) -> int:
 	return candy_level_multiplier[level]
 
 func get_candy(candy: Candy, level: CandyLevel = CandyLevel.FUN_SIZE):
