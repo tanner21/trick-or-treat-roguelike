@@ -60,11 +60,53 @@ These are multiplied by the base value of the candy. If there aren't enough rand
 
 
 ## Trick
-TODO
+### Encounter
+You'll fight either some kids or some pets or a combination in turn-based combat. Your basket is randomized at the start of battle. Each turn 4 pieces of candy are dealt out like a hand in a deck of cards. You have three energy and it takes 1 energy to use a candy.
+
+#### Objective
+Defeat the opposing targets by hurling candy at them to lower their health.
+
+**Unhealthy candy** will lower target's health
+**Healthy candy** will raise target's health
+**Special candy** will perform an affect on the target
+
+You can use any candy on your enemies or yourself, but ideally you'd use unhealthy candy on your enemies and healthy candy on yourself. Some special candies, like Rock, you'll want to use on enemies and other special candies, like Gummy Bears, you'll want to use on yourself.
+
+#### Enemy actions
+- Use unhealthy candy on player
+- Use healthy candy on itself
+- Use special candy on player or itself (if it's beneficial)
+- Dazed (can't attack)
+- Tied up (can't attack)
+
+#### Your turn
+At the start of your turn your enemy will pick it's next attack and show it's intent above it's head.
+   1. Draw candy out of your basket like cards of a deck
+   2. Use a candy on a target (costs 1 energy)
+   3. Once you're out of energy, or kill last enemy, or choose to, your turn will end and the enemy's turn will begin
+
+### Collect Candy
+If you successfully complete the encounter, you'll be granted the opportunity to pick a piece of candy from three candies. The chances for each candy are below:
+
+#### Candy chance
+- Regular House
+  - Fun size - 60%
+  - Regular size - 25%
+  - King size - 10%
+  - Party size - 5%
+- Rich House
+  - Fun size - 10%
+  - Regular size - 40%
+  - King size - 40%
+  - Party size - 10%
+
+#### Candy upgrade
+You can upgrade candy if you have 2 of a kind with Party size being the max
+
 ## Treat
 TODO
 ## Friend's House
-TODO
+Can either rest to restore health or choose more candy with the chance to upgrade
 ## Boss
 TODO
 
@@ -105,6 +147,9 @@ TODO
 - [ ] UI For Trick Encounter
 - [ ] Finish Screen
 - [ ] Start Screen
+- [ ] Warrior skin (Michelangelo from TMNT)
+- [ ] Wizard skin (Harry Potter)
+- [ ] Witch skin (Care bear)
 ### Sounds
 - [ ] Click on House
 - [ ] Click on Friend's House
@@ -117,3 +162,9 @@ TODO
 - [ ] Attack on boss
 - [ ] Hover over candy
 - [ ] Spooky background music
+- [ ] Warrior selected sound
+- [ ] Wizard selected sound
+- [ ] Witch selected sound
+- [ ] Warrior hit sound
+- [ ] Wizard hit sound
+- [ ] Witch hit sound
